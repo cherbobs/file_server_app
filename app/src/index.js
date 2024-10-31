@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/authRoutes');
 app.use('/auth', authRoutes);
 
+// Importation et utilisation des routes profil
+const userRoutes = require('./routes/userRoutes');
+app.use('/user', userRoutes);
+
+
 // Démarrage du serveur
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur le port ${PORT}`);
