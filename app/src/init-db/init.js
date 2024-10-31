@@ -1,24 +1,22 @@
-// init-db/init.js
-db.createCollection("users");
-db.users.insertMany([
-  {
-    username: "testuser",
-    email: "testuser@example.com",
-    password: "hashed_password_here", // Remplacez par un mot de passe chiffré
-    quotaUsed: 0,
-    files: []
-  }
-]);
+// src/init-db/init.js
+const mysql = require('mysql2/promise');
 
-db.createCollection("files");
-db.files.insertMany([
-  {
-    filename: "example.txt",
-    size: 1024,
-    ownerId: ObjectId("ID_utilisateur_test"),
-    metadata: {
-      uploadDate: new Date(),
-      contentType: "text/plain"
-    }
-  }
-]);
+// Créer un pool de connexions pour une meilleure gestion des connexions
+const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+});
+
+// Vérifier la connexion au démarrage
+db.getConnection()
+  .then(connection => {
+    console.log('Connecté à MySQL');
+    connection.release(); // libère la connexion
+  })
+  .catch(err => {
+    console.error('Erreur de connexion à MySQL:', err);
+  });
+
+module.exports = db;
