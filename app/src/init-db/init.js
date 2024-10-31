@@ -1,32 +1,22 @@
-// src/index.js
-const express = require('express');
-const mysql = require('mysql2');
-const app = express();
-const PORT = process.env.PORT || 3000;
+// src/init-db/init.js
+const mysql = require('mysql2/promise');
 
-// Créer une connexion MySQL
-const db = mysql.createConnection({
+// Créer un pool de connexions pour une meilleure gestion des connexions
+const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 });
 
-// Connecter à la base de données
-db.connect(err => {
-  if (err) {
-    console.error('Erreur de connexion à MySQL:', err);
-  } else {
+// Vérifier la connexion au démarrage
+db.getConnection()
+  .then(connection => {
     console.log('Connecté à MySQL');
-  }
-});
+    connection.release(); // libère la connexion
+  })
+  .catch(err => {
+    console.error('Erreur de connexion à MySQL:', err);
+  });
 
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('Bienvenue sur le serveur de fichiers avec MySQL !');
-});
-
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
-});
+module.exports = db;
