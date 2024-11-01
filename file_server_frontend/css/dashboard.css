@@ -1,0 +1,146 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+
+.header-info {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.button-group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin-right: 35px;
+}
+
+
+.button-group a {
+    text-decoration: none;
+}
+
+
+.tab-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #333;
+    color: white;
+}
+
+.tab-button:not(.active):hover {
+    background-color: #f0f0f0;
+}
+
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: 150px auto;
+    position: relative;
+}
+
+
+.upload-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.add-file-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border: 2px solid #0070f3;
+    border-radius: 8px;
+    background-color: white;
+    color: #0070f3;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 1rem;
+}
+
+.add-file-button:hover {
+    background-color: #0070f3;
+    color: white;
+}
+
+.plus-sign {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.space-info {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.transfer-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #0070f3;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.transfer-btn:hover {
+    background-color: #005bb5;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}

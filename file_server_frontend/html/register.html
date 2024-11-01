@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css">
+    <title>Inscription</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo File Server">
+            </a>
+        </div>
+        <div class="button-group">
+            <a href="../index.html" class="tab-button">Connexion</a>
+            <a href="register.html" class="tab-button active">S'inscrire</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Inscription</h1>
+        <main>
+            <form id="registerForm">
+                <div class="form-field">
+                    <input type="text" id="name" placeholder="Nom et prénom" required>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-field">
+                    <input type="password" id="password" placeholder="Mot de passe" required>
+                </div>
+                <button type="submit" class="submit-btn">S'inscrire</button>
+                <p class="signup-link">Déjà un compte ? <a href="../index.html">Connectez-vous.</a></p>
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 File Server. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
