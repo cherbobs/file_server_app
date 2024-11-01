@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo File Server">
+            </a>
+        </div>
+        <div class="header-info">
+            <span>[Nom+prénom]</span> <!-- nom et prénom de la session -->
+        </div>
+        <div class="button-group">
+            <button class="tab-button active">Transfert</button>
+            <a href="files.html" class="tab-button">Mes fichiers</a>
+            <a href="logout.html" class="tab-button">Déconnexion</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="upload-section">
+            <div class="add-file-button">
+                <div class="plus-sign">+</div>
+                <span>Ajouter des fichiers</span>
+            </div>
+            <p class="space-info">2Go disponible par upload</p>
+            <button type="button" class="transfer-btn">Transférer</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 File Server. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
